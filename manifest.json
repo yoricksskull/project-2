@@ -1,17 +1,26 @@
 {
   "manifest_version": 2,
-  "name": "PROJECT NAME",
-  "description": "PROJECT DESCRIPTION",
-  "version": "0.1",
+  "name": "BashFastFash",
+  "description": "Un-greenwashing your favorite fast fashion stores with radical transparency",
+  "version": "1.0",
+  "permissions": ["storage"],
+  "web_accessible_resources": ["styles.css"],
   "content_scripts": [
     {
-      "matches": [
-        "*://*/*"
+      "matches": ["https://*/us/en/*"
       ],
       "js": [
-        "content.js"
+        "tutorial3-content.js"
       ],
-      "run_at": "document_end"
+      "css":[
+        "styles.css"
+      ],
+      "run_at": "document_idle"
     }
-  ]
+  ],
+  "options_page": "options.html",
+  "icons": {
+    "128": "images/newicon.png"
+  }
+
 }
